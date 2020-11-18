@@ -25,10 +25,7 @@ cat index.html'''
         sh '''# Build Docker Image 
 docker build -t registerme:latest .
 '''
-        sh '''# Del of old image
-docker rmi 192.168.1.27:5000/registerme:latest
-
-# Upload to the local registry
+        sh '''# Upload to the local registry
 docker tag registerme:latest 192.168.1.27:5000/registerme:latest 
 docker push 192.168.1.27:5000/registerme:latest '''
       }
